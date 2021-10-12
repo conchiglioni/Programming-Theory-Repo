@@ -16,16 +16,13 @@ public class Shape : MonoBehaviour
         
     }
 
-    protected void CheckOutofBounds()
+    private void OnTriggerEnter(Collider other)
     {
-        if(transform.position.y < -5)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
-    protected virtual Mesh GenerateMesh()
+    public virtual void GenerateObject()
     {
-        return gameObject.GetComponent<Mesh>();
+        return;
     }
 }

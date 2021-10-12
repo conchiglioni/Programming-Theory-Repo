@@ -10,15 +10,17 @@ public class MainUIHandler : MonoBehaviour
     public Button activateOverlay;
     public TextMeshProUGUI scaleText;
     public TextMeshProUGUI sideText;
-    private float scale;
-    private int sideNumber;
+    public float scale;
+    public int sideNumber;
     public Slider scaleSlider;
     public Slider sideSlider;
+    public GameObject meshGeneratorPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateScale();
+        UpdateSideNumber();
     }
 
     // Update is called once per frame
@@ -49,5 +51,12 @@ public class MainUIHandler : MonoBehaviour
     {
         overlay.SetActive(true);
         activateOverlay.gameObject.SetActive(false);
+    }
+
+    public void CreateMeshGenerator()
+    {
+        GameObject meshGenerator = Instantiate(meshGeneratorPrefab, new Vector3(0, 5, 0), meshGeneratorPrefab.transform.rotation);
+        meshGenerator.GetComponent<MeshGenerator>().CreateObject(sideNumber, scale);
+        meshGenerator.AddComponent<DragHandler>();
     }
 }
