@@ -5,6 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter))]
 public class MeshGenerator : MonoBehaviour
 {
+    private Rigidbody rb;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     public void CreateObject(int sides, float scale)
     {
         switch(sides)
@@ -23,7 +28,9 @@ public class MeshGenerator : MonoBehaviour
                 break;
         }
         transform.localScale *= scale;
-        gameObject.GetComponent<Rigidbody>().mass *= scale;
+        rb.mass = 10;
+        rb.angularDrag = 0.9f;
+        rb.mass *= scale;
         Debug.Log("Object Created");
     }
 

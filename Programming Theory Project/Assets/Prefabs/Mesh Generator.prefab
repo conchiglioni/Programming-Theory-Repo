@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 7065646264519274149}
   - component: {fileID: 7065646264519274169}
   - component: {fileID: 7065646264519274170}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh Generator
-  m_TagString: Untagged
+  m_TagString: Shape
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,7 +62,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5e9ad8e38853e4847ac55338e157639a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

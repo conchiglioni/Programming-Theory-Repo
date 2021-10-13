@@ -18,6 +18,14 @@ public class CameraController : MonoBehaviour
         float verticalInput = Input.GetAxisRaw("Vertical");
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         Vector3 targetPosition = transform.position + new Vector3(horizontalInput, 0, verticalInput).normalized;
+        if(Input.GetKey(KeyCode.Space))
+        {
+            targetPosition += Vector3.up;
+        }
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            targetPosition -= Vector3.up;
+        }
         Vector3 lerpPosition = Vector3.Lerp(transform.position, targetPosition, speed);
         transform.position = lerpPosition;
     }

@@ -15,10 +15,12 @@ public class MainUIHandler : MonoBehaviour
     public Slider scaleSlider;
     public Slider sideSlider;
     public GameObject meshGeneratorPrefab;
+    public float gravityModifier;
 
     // Start is called before the first frame update
     void Start()
     {
+        Physics.gravity *= gravityModifier;
         UpdateScale();
         UpdateSideNumber();
     }
