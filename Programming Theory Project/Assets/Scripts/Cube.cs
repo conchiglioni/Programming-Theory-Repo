@@ -32,14 +32,15 @@ public class Cube : Shape
 
     void CreateShape()
     {
-        Vector3 p0 = new Vector3(0, 0, 0);
-        Vector3 p1 = new Vector3(0, 0, 1);
-        Vector3 p2 = new Vector3(1, 0, 1);
-        Vector3 p3 = new Vector3(1, 0, 0);
-        Vector3 p4 = new Vector3(0, 1, 0);
-        Vector3 p5 = new Vector3(0, 1, 1);
-        Vector3 p6 = new Vector3(1, 1, 1);
-        Vector3 p7 = new Vector3(1, 1, 0);
+        Vector3 centroidOffset = new Vector3(0.5f, 0.5f, 0.5f);
+        Vector3 p0 = new Vector3(0, 0, 0) - centroidOffset;
+        Vector3 p1 = new Vector3(0, 0, 1) - centroidOffset;
+        Vector3 p2 = new Vector3(1, 0, 1) - centroidOffset;
+        Vector3 p3 = new Vector3(1, 0, 0) - centroidOffset;
+        Vector3 p4 = new Vector3(0, 1, 0) - centroidOffset;
+        Vector3 p5 = new Vector3(0, 1, 1) - centroidOffset;
+        Vector3 p6 = new Vector3(1, 1, 1) - centroidOffset;
+        Vector3 p7 = new Vector3(1, 1, 0) - centroidOffset;
 
         vertices = new Vector3[]
         {

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7065646264519274149}
   - component: {fileID: 7065646264519274169}
   - component: {fileID: 7065646264519274170}
+  - component: {fileID: 7261037307451359576}
   m_Layer: 7
   m_Name: Mesh Generator
   m_TagString: Shape
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   - {fileID: 2100000, guid: 5e9ad8e38853e4847ac55338e157639a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -127,3 +128,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &7261037307451359576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7065646264519274148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cb14e728cb7874390b0a8b880cc394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeInTexcoordChannel: 1
+  cospatialVertexDistance: 0.01

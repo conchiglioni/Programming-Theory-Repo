@@ -28,14 +28,17 @@ public class TriangularPyramid : Shape
 
         CreateShape();
         UpdateMesh();
+        Vector3 rotationAngles = transform.rotation.eulerAngles;
+        transform.rotation = Quaternion.Euler(rotationAngles + Vector3.up * -30);
     }
 
     void CreateShape()
     {
-        Vector3 p0 = new Vector3(0, 0, 0);
-        Vector3 p1 = new Vector3(0, 0, 1);
-        Vector3 p2 = new Vector3(Mathf.Sqrt(0.75f), 0, 0.5f);
-        Vector3 p3 = new Vector3(Mathf.Sqrt(0.75f) / 3, Mathf.Sqrt(0.75f), 0.5f);
+        Vector3 centroidOffset = new Vector3(0.2886751346f, 0.2165063509f, 0.5f);
+        Vector3 p0 = new Vector3(0, 0, 0) - centroidOffset;
+        Vector3 p1 = new Vector3(0, 0, 1) - centroidOffset;
+        Vector3 p2 = new Vector3(Mathf.Sqrt(0.75f), 0, 0.5f) - centroidOffset;
+        Vector3 p3 = new Vector3(Mathf.Sqrt(0.75f) / 3, Mathf.Sqrt(0.75f), 0.5f) - centroidOffset;
 
 
         vertices = new Vector3[]

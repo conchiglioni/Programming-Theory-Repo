@@ -39,7 +39,7 @@ Material:
     - _SampleGI: 0
     - _SrcBlend: 1
     - _Surface: 0
-    - _Thickness: 0.03
+    - _Thickness: 0.05
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

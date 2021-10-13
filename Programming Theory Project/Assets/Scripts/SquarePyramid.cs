@@ -32,11 +32,12 @@ public class SquarePyramid : Shape
 
     void CreateShape()
     {
-        Vector3 p0 = new Vector3(0, 0, 0);
-        Vector3 p1 = new Vector3(0, 0, 1);
-        Vector3 p2 = new Vector3(1, 0, 1);
-        Vector3 p3 = new Vector3(1,0,0);
-        Vector3 p4 = new Vector3(0.5f, Mathf.Sqrt(0.75f), 0.5f);
+        Vector3 centroidOffset = new Vector3(0.5f, 0.1767766953f, 0.5f);
+        Vector3 p0 = new Vector3(0, 0, 0) - centroidOffset;
+        Vector3 p1 = new Vector3(0, 0, 1) - centroidOffset;
+        Vector3 p2 = new Vector3(1, 0, 1) - centroidOffset;
+        Vector3 p3 = new Vector3(1,0,0) - centroidOffset;
+        Vector3 p4 = new Vector3(0.5f, Mathf.Sqrt(0.75f), 0.5f) - centroidOffset;
 
 
         vertices = new Vector3[]

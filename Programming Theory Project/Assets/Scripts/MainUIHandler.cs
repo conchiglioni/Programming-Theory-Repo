@@ -8,6 +8,7 @@ public class MainUIHandler : MonoBehaviour
 {
     public GameObject overlay;
     public Button activateOverlay;
+    public TextMeshProUGUI greetingText;
     public TextMeshProUGUI scaleText;
     public TextMeshProUGUI sideText;
     public float scale;
@@ -20,6 +21,10 @@ public class MainUIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(MainManager.Instance != null)
+        {
+            greetingText.text = $"User: " + MainManager.Instance.playerName;
+        }
         Physics.gravity *= gravityModifier;
         UpdateScale();
         UpdateSideNumber();
