@@ -7,7 +7,9 @@ using TMPro;
 public class MainUIHandler : MonoBehaviour
 {
     public GameObject overlay;
+    public GameObject controlsOverlay;
     public Button activateOverlay;
+    public Button activateControlsOverlay;
     public TextMeshProUGUI greetingText;
     public TextMeshProUGUI scaleText;
     public TextMeshProUGUI sideText;
@@ -21,19 +23,15 @@ public class MainUIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // If we have a name from the MainManager, greet the player in the overlay
         if(MainManager.Instance != null)
         {
             greetingText.text = $"User: " + MainManager.Instance.playerName;
         }
         Physics.gravity *= gravityModifier;
+        // ABSTRACTION
         UpdateScale();
         UpdateSideNumber();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void UpdateScale()
@@ -60,10 +58,25 @@ public class MainUIHandler : MonoBehaviour
         activateOverlay.gameObject.SetActive(false);
     }
 
+    public void OpenControlsOverlay()
+    {
+        controlsOverlay.SetActive(true);
+        activateControlsOverlay.gameObject.SetActive(false);
+    }
+
+    public void CloseControlsOverlay()
+    {
+        controlsOverlay.SetActive(false);
+        activateControlsOverlay.gameObject.SetActive(true);
+    }
+
     public void CreateMeshGenerator()
     {
+        // Create a new base Mesh Generator prefab
         GameObject meshGenerator = Instantiate(meshGeneratorPrefab, new Vector3(0, 5, 0), meshGeneratorPrefab.transform.rotation);
+        // Call the CreateObject method, which generates a mesh based on sideNumber
         meshGenerator.GetComponent<MeshGenerator>().CreateObject(sideNumber, scale);
+        // Add a drag handler so the user can drag the generated object
         meshGenerator.AddComponent<DragHandler>();
     }
 }

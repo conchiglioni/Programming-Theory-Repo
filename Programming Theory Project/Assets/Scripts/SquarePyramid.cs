@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class SquarePyramid : Shape
 {
     Mesh mesh;
@@ -9,28 +10,19 @@ public class SquarePyramid : Shape
     Vector3[] vertices;
     int[] triangles;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // POLYMORPHISM
     public override void GenerateObject()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
+        // ABSTRACTION
         CreateShape();
         UpdateMesh();
     }
 
-    void CreateShape()
+    // POLYMORPHISM
+    protected override void CreateShape()
     {
         Vector3 centroidOffset = new Vector3(0.5f, 0.1767766953f, 0.5f);
         Vector3 p0 = new Vector3(0, 0, 0) - centroidOffset;
@@ -61,7 +53,8 @@ public class SquarePyramid : Shape
         };
     }
 
-    void UpdateMesh()
+    // POLYMORPHISM
+    protected override void UpdateMesh()
     {
         mesh.Clear();
 

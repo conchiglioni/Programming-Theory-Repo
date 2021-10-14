@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class TriangularPyramid : Shape
 {
     Mesh mesh;
@@ -9,30 +10,22 @@ public class TriangularPyramid : Shape
     Vector3[] vertices;
     int[] triangles;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // POLYMORPHISM
     public override void GenerateObject()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
+        // ABSTRACTION
         CreateShape();
         UpdateMesh();
+
         Vector3 rotationAngles = transform.rotation.eulerAngles;
         transform.rotation = Quaternion.Euler(rotationAngles + Vector3.up * -30);
     }
 
-    void CreateShape()
+    // POLYMORPHISM
+    protected override void CreateShape()
     {
         Vector3 centroidOffset = new Vector3(0.2886751346f, 0.2165063509f, 0.5f);
         Vector3 p0 = new Vector3(0, 0, 0) - centroidOffset;
@@ -58,7 +51,8 @@ public class TriangularPyramid : Shape
         };
     }
 
-    void UpdateMesh()
+    // POLYMORPHISM
+    protected override void UpdateMesh()
     {
         mesh.Clear();
 

@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
     }
 
+    // POLYMORPHISM
     public virtual void GenerateObject()
+    {
+        return;
+    }
+
+    // POLYMORPHISM
+    protected virtual void CreateShape()
+    {
+        return;
+    }
+
+    // POLYMORPHISM
+    protected virtual void UpdateMesh()
     {
         return;
     }
