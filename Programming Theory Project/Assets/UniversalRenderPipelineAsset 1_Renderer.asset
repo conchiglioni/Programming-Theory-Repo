@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5439520000452824797
+--- !u!114 &-6439707417954435887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13,23 +13,6 @@ MonoBehaviour:
   m_Name: DepthNormalsFeature
   m_EditorClassIdentifier: 
   m_Active: 1
---- !u!114 &-3573881432650253392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6290464c29e04c042b4e4d8428b8fdcb, type: 3}
-  m_Name: NewBlitMaterialFeature
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  settings:
-    material: {fileID: 2100000, guid: 9588bc4488b906041bc9b362af61d701, type: 2}
-    materialPassIndex: 0
-    renderEvent: 500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,14 +23,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de640fe3d0db1804a85f9fc8f5cadab6, type: 3}
-  m_Name: UniversalRenderPipelineAsset_Renderer
+  m_Name: UniversalRenderPipelineAsset 1_Renderer
   m_EditorClassIdentifier: 
   m_RendererFeatures:
-  - {fileID: 2327119736098497158}
-  - {fileID: -3573881432650253392}
-  - {fileID: -5439520000452824797}
-  - {fileID: 1400869382434610219}
-  m_RendererFeatureMap: 86a2f30312974b20b07b84b1c50567ce2371602061f182b42b5cbcfc47e37013
+  - {fileID: -6439707417954435887}
+  - {fileID: 1645791758448913273}
+  m_RendererFeatureMap: d1bc60ef3890a1a679eb9c70e206d716
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   shaders:
@@ -76,7 +57,7 @@ MonoBehaviour:
   m_ShadowTransparentReceive: 1
   m_RenderingMode: 0
   m_AccurateGbufferNormals: 0
---- !u!114 &1400869382434610219
+--- !u!114 &1645791758448913273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,49 +67,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6290464c29e04c042b4e4d8428b8fdcb, type: 3}
-  m_Name: DepthNormalsTest
+  m_Name: EdgeDetectionOutlines
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    material: {fileID: 2100000, guid: 9588bc4488b906041bc9b362af61d701, type: 2}
+    material: {fileID: 2100000, guid: 7e12257be049b16478a4a75c86f7d863, type: 2}
     materialPassIndex: 0
     renderEvent: 300
---- !u!114 &2327119736098497158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: Outlines
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  settings:
-    passTag: Outlines
-    Event: 300
-    filterSettings:
-      RenderQueueType: 0
-      LayerMask:
-        serializedVersion: 2
-        m_Bits: 128
-      PassNames: []
-    overrideMaterial: {fileID: 2100000, guid: 5e9ad8e38853e4847ac55338e157639a, type: 2}
-    overrideMaterialPassIndex: 0
-    overrideDepthState: 0
-    depthCompareFunction: 4
-    enableWrite: 1
-    stencilSettings:
-      overrideStencilState: 0
-      stencilReference: 0
-      stencilCompareFunction: 8
-      passOperation: 0
-      failOperation: 0
-      zFailOperation: 0
-    cameraSettings:
-      overrideCamera: 0
-      restoreCamera: 1
-      offset: {x: 0, y: 0, z: 0, w: 0}
-      cameraFieldOfView: 60

@@ -395,12 +395,12 @@ GameObject:
   - component: {fileID: 232015410}
   - component: {fileID: 232015414}
   m_Layer: 7
-  m_Name: Cube
+  m_Name: Test Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &232015410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2331,12 +2331,12 @@ GameObject:
   - component: {fileID: 1439905961}
   - component: {fileID: 1439905965}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Test Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1439905961
 SphereCollider:
   m_ObjectHideFlags: 0
