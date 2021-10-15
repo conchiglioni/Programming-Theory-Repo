@@ -123,13 +123,13 @@ public class DragHandler : MonoBehaviour
             // Allow the user to rotate the object along the world x-axis by pressing 'E'
             if (Input.GetKey(KeyCode.E))
             {
-                transform.Rotate(Vector3.right, Space.World);
+                transform.Rotate(Vector3.right * 2, Space.World);
                 keyPressed = true;
             }
             // Allow the user to rotate the object along the world y-axis by pressing 'Q'
             if (Input.GetKey(KeyCode.Q))
             {
-                transform.Rotate(Vector3.up, Space.World);
+                transform.Rotate(Vector3.up * 2, Space.World);
                 keyPressed = true;
             }
             if(keyPressed)
@@ -139,7 +139,7 @@ public class DragHandler : MonoBehaviour
         }
 
         // Correct the object's rotation on pickup
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, tempRotation, 2);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, tempRotation, 4);
         // Raycast from the camera to the mouse
         Ray camRay = myMainCamera.ScreenPointToRay(Input.mousePosition);
         // Convert to normalized vector and multiply by initial grab radius
